@@ -1,0 +1,22 @@
+{
+  "name": "myproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/main.js",
+  "dependencies": {},
+  "devDependencies": {
+    "backbone": "^1.2.3",
+    "css-loader": "^0.23.1",
+    "html-webpack-plugin": "^1.7.0",
+    "jquery": "^2.2.0",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.10",
+    "webpack-dev-server": "^1.14.0"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --hot --inline",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "meiminjun",
+  "license": "ISC"
+}
