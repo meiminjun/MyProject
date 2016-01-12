@@ -2,7 +2,7 @@
  * @Author: EX-MEIMINJUN001
  * @Date:   2015-12-07 11:16:42
  * @Last Modified by:   EX-MEIMINJUN001
- * @Last Modified time: 2016-01-11 18:53:08
+ * @Last Modified time: 2016-01-12 11:34:48
  */
 var webpack = require('webpack');
 var path = require('path');
@@ -46,6 +46,8 @@ module.exports = {
 	plugins: [
 		new HtmlwebpackPlugin({
 			title: 'Hello World app'
-		})
-	]
+		}),
+		new webpack.HotModuleReplacementPlugin()
+	],
+	devtool: 'source-map'
 };
