@@ -1,7 +1,8 @@
 var Backbone = require('Backbone');
 
 var PAWA = {};
-PAWA.Backbone = Backbone;
+
+
 /**
  * 接口类
  * @param {[type]} name    接口名字
@@ -64,56 +65,68 @@ PAWA.extend = function(Child,Parent) {　
 	Child.prototype = new F();　　　　
 	Child.prototype.constructor = Child;　　　　
 	Child.uber = Parent.prototype;
-}
+};
+
+PAWA.Backbone = Backbone;
+PAWA.Model = Backbone.Model;
+PAWA.View = Backbone.View;
+PAWA.Collection = Backbone.Collection;
+PAWA.history = Backbone.history;
+
+PAWA.Router = Backbone.Router;
 
 
-PAWA.Base = (function() {
-	var version = '0.0.1';
-	var test = function() {
-		alert(111);
-	}
-
-	var Router = Backbone.Router;
-	var Collection = Backbone.Collection;
-
-	return {
-		version:version,
-		Router:Router,
-		Collection:Collection
-	};
-})()
 
 
-PAWA.until = (function() {
-	var name = 111;
-	var test = function(age) {
-		return age;
-	};
 
-	var Router = function() {
-		Backbone.Router.apply(this, arguments);
-		return this;
-	};
 
-	return {
-		PAWACollection: Backbone.Collection,
-		PAWARouter: Router
-	};
-})();
+// PAWA.Base = (function() {
+// 	var version = '0.0.1';
+// 	var test = function() {
+// 		alert(111);
+// 	}
+
+// 	var Router = Backbone.Router;
+// 	var Collection = Backbone.Collection;
+
+// 	return {
+// 		version:version,
+// 		Router:Router,
+// 		Collection:Collection
+// 	};
+// })()
+
+
+// PAWA.until = (function() {
+// 	var name = 111;
+// 	var test = function(age) {
+// 		return age;
+// 	};
+
+// 	var Router = function() {
+// 		Backbone.Router.apply(this, arguments);
+// 		return this;
+// 	};
+
+// 	return {
+// 		PAWACollection: Backbone.Collection,
+// 		PAWARouter: Router
+// 	};
+// })();
 
 // PAWA.PAWACollection =  new Backbone.Collection
 
 
 
-var Router = function() {
-	PAWA.Base.Router.apply(this, arguments);
-	this.getName = function() {
-		alert("dddd");
-	}
-};
-PAWA.extend(Router, Backbone.Router);
+// var Router = function() {
+// 	PAWA.Base.Router.apply(this, arguments);
+// 	this.getName = function() {
+// 		alert("dddd");
+// 	}
+// };
+// PAWA.extend(Router, Backbone.Router);
 
-PAWA.PAWARouter = Router;
+// PAWA.PAWARouter = Router;
 
 console.log(PAWA);
 
