@@ -130,5 +130,4 @@ PAWA.Router = Backbone.Router;
 
 console.log(PAWA);
 
-window.PAWA = PAWA;
-module.exports = PAWA;
+module.exports = window.PAWA = PAWA;
