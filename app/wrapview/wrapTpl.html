@@ -1,3 +1,22 @@
 <div>
 	<h1>测试</h1>
+	<h1>{{say_hello}}</h1>
+	{{#with auther}}
+		<h2>{{name}}</h2>
+		<h2>{{age}}</h2>
+		<h2>{{sex}}</h2>
+	{{/with}}
+
+	{{#each list}}
+		{{name}}
+	{{else}}
+		<p>No content</p>
+	{{/each}}
+
+	{{#if response}}
+		<p>有内容</p>
+	{{else}}
+		<p>没有内容</p>
+	{{/if}}
+	
 </div>

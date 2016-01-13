@@ -28,7 +28,7 @@ module.exports = {
 	},
 	module: {
 		loaders: [{
-			test: /\.handlebars$/,
+			test: /\.html$/,
 			loader: 'handlebars-loader',
 			include: APP_PATH
 		},{
@@ -38,9 +38,6 @@ module.exports = {
 		}, {
 			test: /\.(png|jpg)$/,
 			loader: 'url?limit=40000'
-		}, {
-			test: /\.html$/,
-			loader: 'html'
 		}]
 	},
 	devServer: {
@@ -61,7 +58,16 @@ module.exports = {
 			$: "jquery",
 			jQuery: "jquery",
 			"window.jQuery": "jquery"
-		})
+		}),
+		//允许错误不打断程序
+		new webpack.NoErrorsPlugin(),
+		//压缩打包的文件
+	    // new webpack.optimize.UglifyJsPlugin({
+	    //   compress: {
+	    //     //supresses warnings, usually from module minification
+	    //     warnings: false
+	    //   }
+	    // }),
 	],
 	externals: {
 		// require("jquery") is external and available
