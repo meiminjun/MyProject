@@ -2,7 +2,7 @@
  * @Author: EX-MEIMINJUN001
  * @Date:   2015-12-07 11:16:42
  * @Last Modified by:   EX-MEIMINJUN001
- * @Last Modified time: 2016-01-13 19:16:14
+ * @Last Modified time: 2016-01-14 18:01:19
  */
 var webpack = require('webpack');
 var path = require('path');
@@ -21,17 +21,18 @@ module.exports = {
 	devtool: process.env.WEBPACK_DEVTOOL || 'source-map',
 	output: {
 		path: BUILD_PATH,
-		filename: 'bundle.js'
+		filename: '[name].js',
+		chunkFilename: "js/[chunkhash].chunk.js"	// 动态加载的js
 	},
 	resolve: {
-		extensions: ['', '.js', '.html']
+		extensions: ['', '.js']
 	},
 	module: {
 		loaders: [{
 			test: /\.html$/,
 			loader: 'handlebars-loader',
 			include: APP_PATH
-		},{
+		}, {
 			test: /\.css$/,
 			loaders: ['style', 'css'],
 			include: APP_PATH
@@ -50,7 +51,16 @@ module.exports = {
 	},
 	plugins: [
 		new HtmlwebpackPlugin({
-			title: 'Hello World app'
+			title: 'Hello World app',
+			// favicon: './src/img/favicon.ico', //favicon路径
+			// filename: './view/index.html', //生成的html存放路径，相对于 path
+			template: './asset/template/index.html', //html模板路径
+			inject: true, //允许插件修改哪些内容，包括head与body
+			hash: true, //为静态资源生成hash值
+			minify: { //压缩HTML文件
+				removeComments: true, //移除HTML中的注释
+				collapseWhitespace: false //删除空白符与换行符
+			}
 		}),
 		new webpack.HotModuleReplacementPlugin(),
 		// 配置全局jquery
@@ -62,17 +72,22 @@ module.exports = {
 		//允许错误不打断程序
 		new webpack.NoErrorsPlugin(),
 		//压缩打包的文件
-	    // new webpack.optimize.UglifyJsPlugin({
-	    //   compress: {
-	    //     //supresses warnings, usually from module minification
-	    //     warnings: false
-	    //   }
-	    // }),
+		// new webpack.optimize.UglifyJsPlugin({
+		//   compress: {
+		//     //supresses warnings, usually from module minification
+		//     warnings: false
+		//   }
+		// }),
 	],
-	externals: {
-		// require("jquery") is external and available
-		//  on the global var jQuery
-		// "jquery": "jQuery"
-	},
+	// externals把公用的库排除掉。公用库会去生成lib.js,lib.css
+	// externals: {
+	// jquery 会导致报错，可能是已经配置了全局jquery
+	//     'jquery': {
+	//         root: 'jQuery',
+	//         commonjs2: 'jquery',
+	//         commonjs: 'jquery',
+	//         amd: 'jquery'
+	//     }
+	// },
 	devtool: 'source-map'
 };

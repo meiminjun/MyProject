@@ -1,6 +1,7 @@
 var PAWA = require('../common/until/PAWA');
-console.log($);
+var css = require('../asset/css/bank2.css');
 var template = require('./wrapview/wrapTpl.html');
+console.log(template);
 require(['./mgm/MgmRouter', './home/Home'],
   function(MgmRouter, Home) {
 

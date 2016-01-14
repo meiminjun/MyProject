@@ -1,10 +1,4 @@
-﻿*{margin:0px;padding:0px;
--webkit-tap-highlight-color: rgba(0,0,0,0);
--webkit-touch-callout:none;
-outline: none;
--webkit-user-select: none;
-}
-input[type="text"],input[type="password"],input[type="number"],select,textarea{-webkit-user-select: text;}
+﻿input[type="text"],input[type="password"],input[type="number"],select,textarea{-webkit-user-select: text;}
 body{font-size: 14px;color:#4f5257;min-width:320px;
 font-family:heiti cs,Arial,Helvetica,LiHei Pro Medium;
 background-size: 25px 27.5px;background: #FFFFFF;-webkit-user-select:none; -webkit-text-size-adjust:none;
