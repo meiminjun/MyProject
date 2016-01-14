@@ -1,9 +1,9 @@
 var PAWA = require('../common/until/PAWA');
-var css = require('../asset/css/bank2.css');
+var css = require('../asset/css/test.css');
 var template = require('./wrapview/wrapTpl.html');
 console.log(template);
-require(['./mgm/MgmRouter', './home/Home'],
-  function(MgmRouter, Home) {
+require(['./mgm/MgmRouter'],
+  function(MgmRouter) {
 
     var WrapView = PAWA.View.extend({
       initialize: function() {

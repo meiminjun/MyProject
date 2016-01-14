@@ -1,7 +1,10 @@
-﻿input[type="text"],input[type="password"],input[type="number"],select,textarea{-webkit-user-select: text;}
-body{font-size: 14px;color:#4f5257;min-width:320px;
-font-family:heiti cs,Arial,Helvetica,LiHei Pro Medium;
-background-size: 25px 27.5px;background: #FFFFFF;-webkit-user-select:none; -webkit-text-size-adjust:none;
+﻿input[type="text"],input[type="password"],input[type="number"],select,textarea{
+	-webkit-user-select: text;
+}
+body{
+	font-size: 14px;color:#4f5257;min-width:320px;
+	font-family:heiti cs,Arial,Helvetica,LiHei Pro Medium;
+	background-size: 25px 27.5px;background: #FFFFFF;-webkit-user-select:none; -webkit-text-size-adjust:none;
 }
 a{text-decoration:none;color:#636363;}
 li{list-style:none;}
