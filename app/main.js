@@ -1,7 +1,7 @@
 var PAWA = require('../common/until/PAWA');
 var css = require('../asset/css/test.css');
 var template = require('./wrapview/wrapTpl.html');
-console.log(template);
+alert(1111);
 require(['./mgm/MgmRouter'],
   function(MgmRouter) {
 
