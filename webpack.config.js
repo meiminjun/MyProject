@@ -2,7 +2,7 @@
  * @Author: EX-MEIMINJUN001
  * @Date:   2015-12-07 11:16:42
  * @Last Modified by:   EX-MEIMINJUN001
- * @Last Modified time: 2016-02-03 17:53:34
+ * @Last Modified time: 2016-02-18 10:23:40
  */
 var webpack = require('webpack');
 //  commonsPlugin 可以用于分析模块的共用代码, 单独打一个包出来:
@@ -85,7 +85,7 @@ module.exports = {
 			// favicon: './src/img/favicon.ico', //favicon路径
 			filename: './home/index.html', //生成的html存放路径，相对于 path
 			template: './app/home/templates/index.html', //html模板路径
-			// inject: true, //允许插件修改哪些内容，包括head与body
+			inject: true, //允许插件修改哪些内容，包括head与body
 			// hash: true, //为静态资源生成hash值
 			minify: { //压缩HTML文件
 				removeComments: true, //移除HTML中的注释
@@ -97,7 +97,7 @@ module.exports = {
 			// favicon: './src/img/favicon.ico', //favicon路径
 			filename: './ionicDemo/index.html', //生成的html存放路径，相对于 path
 			template: './app/ionicDemo/templates/index.html', //html模板路径
-			// inject: true, //允许插件修改哪些内容，包括head与body
+			inject: true, //允许插件修改哪些内容，包括head与body
 			// hash: true, //为静态资源生成hash值
 			minify: { //压缩HTML文件
 				removeComments: true, //移除HTML中的注释
